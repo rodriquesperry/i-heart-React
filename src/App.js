@@ -1,6 +1,10 @@
 import HeartLogo from './heart.svg';
 import './App.css';
 
+const Header = (props) => {
+  return <div className='App-header'>{props.msg}</div>;
+};
+
 const Heart = (props) => {
   return (
     <div className='heart'>
@@ -11,9 +15,15 @@ const Heart = (props) => {
 };
 
 function App() {
+  const love = 'I ❤️ React!';
   const message = 'cool cud';
 
-  return  <Heart msg={message} />;
+  return (
+    <>
+      <Header msg={love} />
+      <Heart msg={message} />;
+    </>
+  );
 }
 
 export default App;
